@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: var(--main-color);
+  transition: all .3s;
+}
+
+:root {
+  --main-color: #ff0000;
+}
+
+button {
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+button:hover {
+  background-color: #fff;
+  color: var(--main-color)
+}
