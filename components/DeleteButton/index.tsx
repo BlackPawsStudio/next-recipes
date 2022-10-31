@@ -25,10 +25,10 @@ const DeleteButton = ({ url }: { url: string }) => {
           }}
         >
           <div className={styles['question']}>
-            Are you sure?
+            Вы уверены?
             <div className={styles['buttons']}>
-              <button onClick={deleteTarget}>Yes</button>
-              <button>No</button>
+              <button onClick={deleteTarget}>Да</button>
+              <button>Нет</button>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@ const DeleteButton = ({ url }: { url: string }) => {
             setIsOpened(true);
           }}
         >
-          Delete
+          Удалить
         </button>
       )}
     </>

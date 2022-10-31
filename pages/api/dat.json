@@ -1,0 +1,14 @@
+[
+  {
+    "id": 0,
+    "name": "test",
+    "recipes": [
+      {
+        "id": 0,
+        "name": "test rec",
+        "ingredients": ["молоко", "vfckj"],
+        "recipe": "я @ ты @ "
+      }
+    ]
+  }
+]

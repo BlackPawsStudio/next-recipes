@@ -1,5 +1,5 @@
 export interface RecipeType {
-  id: number;
+  id?: number;
   name: string;
   ingredients: string[];
   recipe: string;

@@ -25,3 +25,22 @@ button:hover {
   background-color: #fff;
   color: var(--main-color)
 }
+
+input {
+  border: 3px solid var(--main-color);
+  border-radius: 50px;
+  padding: 5px 10px;
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+textarea {
+  border: 3px solid var(--main-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 18px;
+  height: 150px;
+}

@@ -25,15 +25,6 @@
   margin-left: auto;
 }
 
-.container > h3 > input {
-  border: 3px solid var(--main-color);
-  border-radius: 50px;
-  padding: 5px 10px;
-  margin-bottom: 3px;
-  font-weight: bold;
-  font-size: 18px;
-}
-
 .container > ul {
   list-style-position: inside;
   border-left: 3px solid var(--main-color);

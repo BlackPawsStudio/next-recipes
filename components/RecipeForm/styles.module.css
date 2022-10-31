@@ -1,0 +1,38 @@
+.container {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5vh;
+}
+
+.container > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1vh;
+}
+
+.container > div > div {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.container > div > div > span {
+  background-color: var(--main-color);
+  border-radius: 50px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.container > div > div > span > * {
+  color: #fff;
+}
+
+.container > div > div > span > span {
+  cursor: pointer;
+}

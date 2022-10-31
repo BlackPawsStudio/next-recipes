@@ -11,7 +11,7 @@ const RecipesGroup = ({ data, add }: { data?: RecipesGroupType; add?: boolean })
   const [newName, setNewName] = useState('');
 
   const addGroup = async () => {
-    const response = await fetch('/api?groupId=true', {
+    const response = await fetch('/api?groupId=save', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -40,10 +40,10 @@ const RecipesGroup = ({ data, add }: { data?: RecipesGroupType; add?: boolean })
                   setNewName(e.target.value);
                 }}
               />
-              <button onClick={addGroup}>Add</button>
+              <button onClick={addGroup}>Сохранить</button>
             </>
           ) : (
-            'Add'
+            'Добавить'
           )}
         </h3>
       ) : (
@@ -55,10 +55,10 @@ const RecipesGroup = ({ data, add }: { data?: RecipesGroupType; add?: boolean })
           </h3>
           <ul className={isOpened ? styles['opened'] : ''}>
             <li>
-              <Link href="add">ADD</Link>
+              <Link href={`add/${data?.id}`}>Добавить</Link>
             </li>
-            {data?.recipes.map((el, id) => (
-              <Recipe key={id} data={el} groupId={el.id} />
+            {data?.recipes && data.recipes.map((el, id) => (
+              <Recipe key={id} data={el} groupId={data?.id || 0} />
             ))}
           </ul>
         </>
