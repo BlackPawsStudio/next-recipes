@@ -24,7 +24,7 @@ const RecipesGroup = ({ data, add }: { data?: RecipesGroupType; add?: boolean })
     if ((await response.status) === 201) {
       location.reload();
     } else {
-      alert(response.statusText);
+      alert(`${response.status} ${response.statusText}`);
     }
   };
   return (
@@ -57,9 +57,8 @@ const RecipesGroup = ({ data, add }: { data?: RecipesGroupType; add?: boolean })
             <li>
               <Link href={`add/${data?.id}`}>Добавить</Link>
             </li>
-            {data?.recipes && data.recipes.map((el, id) => (
-              <Recipe key={id} data={el} groupId={data?.id || 0} />
-            ))}
+            {data?.recipes &&
+              data.recipes.map((el, id) => <Recipe key={id} data={el} groupId={data?.id || 0} />)}
           </ul>
         </>
       )}

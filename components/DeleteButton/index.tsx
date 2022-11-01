@@ -5,12 +5,12 @@ const DeleteButton = ({ url }: { url: string }) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const deleteTarget = async () => {
-    const response = await fetch(`/api?${url}`, {method: 'DELETE'});
+    const response = await fetch(`/api?${url}`, { method: 'DELETE' });
     if (response.status === 202) {
-      alert('Deleted');
+      alert('Удалено');
       location.reload();
     } else {
-      alert(response.statusText);
+      alert(`${response.status} ${response.statusText}`);
     }
   };
 

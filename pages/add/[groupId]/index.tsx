@@ -4,7 +4,7 @@ import { RecipeType } from '../../api/data';
 
 const AddPage = () => {
   const router = useRouter();
-  const onSubmit = async (data:RecipeType) => {
+  const onSubmit = async (data: RecipeType) => {
     const response = await fetch(`/api?groupId=${router.query.groupId}&id=save`, {
       method: 'POST',
       headers: {
@@ -15,10 +15,10 @@ const AddPage = () => {
     if (response.status === 201) {
       router.push('/');
     } else {
-      alert(response.statusText);
+      alert(`${response.status} ${response.statusText}`);
     }
-  }
-  return <RecipeForm onSubmit={onSubmit} />
+  };
+  return <RecipeForm onSubmit={onSubmit} />;
 };
 
 export default AddPage;

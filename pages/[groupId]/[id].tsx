@@ -30,9 +30,7 @@ const RecipePage = () => {
         <>
           <h3>
             <label>{data?.name}</label>
-            <button>
-              <Link href={`/add/${groupId}/${id}`}>Изменить</Link>
-            </button>
+            <button onClick={() => router.push(`/add/${groupId}/${id}`)}>Изменить</button>
           </h3>
           <div>
             {data?.ingredients.map((el, id) => (

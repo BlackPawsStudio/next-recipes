@@ -1,12 +1,22 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { RecipeType } from '../../pages/api/data';
 import styles from './styles.module.css';
 
-const RecipeForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
-  const [name, setName] = useState('');
+const RecipeForm = ({
+  onSubmit,
+  nameProps,
+  ingredientsProps,
+  recipeProps,
+}: {
+  onSubmit: (data: any) => void;
+  nameProps?: string;
+  ingredientsProps?: string[];
+  recipeProps?: string;
+}) => {
+  const [name, setName] = useState(nameProps || '');
   const [currentIngredient, setCurrentIngredient] = useState('');
-  const [ingredients, setIngredients] = useState<string[]>([]);
-  const [recipe, setRecipe] = useState('');
+  const [ingredients, setIngredients] = useState<string[]>(ingredientsProps || []);
+  const [recipe, setRecipe] = useState(recipeProps || '');
 
   const addIngredient = () => {
     const newIngredients = ingredients.concat();
@@ -23,7 +33,7 @@ const RecipeForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
     const newIngredients = ingredients.concat();
     newIngredients.splice(id, 1);
     setIngredients(newIngredients);
-  }
+  };
 
   const onSubmitLocal = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,7 +55,7 @@ const RecipeForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
     <form onSubmit={onSubmitLocal} className={styles['container']}>
       <div>
         <label>Введите название</label>
-        <input onChange={(e) => setName(e.target.value)} />
+        <input onChange={(e) => setName(e.target.value)} defaultValue={name || ''} />
       </div>
       <div>
         <label>Введите ингредиент</label>
@@ -64,7 +74,7 @@ const RecipeForm = ({ onSubmit }: { onSubmit: (data: any) => void }) => {
       </div>
       <div>
         <label>Введите сам рецепт</label>
-        <textarea onChange={(e) => setRecipe(e.target.value)} />
+        <textarea onChange={(e) => setRecipe(e.target.value)} defaultValue={recipe || ''} />
       </div>
       <button type="submit">Сохранить</button>
     </form>

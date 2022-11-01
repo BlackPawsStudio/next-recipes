@@ -44,3 +44,9 @@ textarea {
   font-size: 18px;
   height: 150px;
 }
+
+@media (max-width: 900px) {
+  main > * {
+    width: 100%!important;
+  }
+}

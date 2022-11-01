@@ -94,7 +94,7 @@ const handler = async (
           const recipe = recipesGroup.recipes.find((el) => el.id === +id);
           if (recipe) {
             const recipeId = recipesGroup.recipes.indexOf(recipe);
-            recipesGroup.recipes = data;
+            recipesGroup.recipes[recipeId] = data;
             console.log('entry updated', recipesGroups);
             await updateData();
             res.status(202).send(recipesGroups);
