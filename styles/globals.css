@@ -46,6 +46,10 @@ textarea {
 }
 
 @media (max-width: 900px) {
+  main {
+    padding: 5vh 0 !important;
+  }
+
   main > * {
     width: 100%!important;
   }

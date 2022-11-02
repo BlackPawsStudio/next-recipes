@@ -31,3 +31,10 @@
   margin-top: 20px;
   padding: 5px;
 }
+
+@media (max-width: 900px) {
+  .container > h3 {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}

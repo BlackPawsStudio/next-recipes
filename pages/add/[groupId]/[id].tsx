@@ -24,6 +24,9 @@ const EditPage = () => {
   }, [groupId, id]);
 
   const onSubmit = async (data: RecipeType) => {
+    if (typeof id === 'string') {
+      data.id = +id;
+    }
     const response = await fetch(`/api?groupId=${groupId}&id=${id}`, {
       method: 'PUT',
       headers: {
@@ -32,7 +35,7 @@ const EditPage = () => {
       body: JSON.stringify(data),
     });
     if (response.status === 202) {
-      router.push('/');
+      router.push(`/${groupId}/${id}`);
     } else {
       alert(`${response.status} ${response.statusText}`);
     }
