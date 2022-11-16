@@ -55,7 +55,9 @@ const RecipesGroup = ({ data, add }: { data?: RecipesGroupType; add?: boolean })
           </h3>
           <ul className={isOpened ? styles['opened'] : ''}>
             <li>
-              <Link href={`add/${data?.id}`}>Добавить</Link>
+              <Link href={`add/${data?.id}`}>
+                Добавить
+              </Link>
             </li>
             {data?.recipes &&
               data.recipes.map((el, id) => <Recipe key={id} data={el} groupId={data?.id || 0} />)}

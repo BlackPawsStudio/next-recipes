@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import RecipesGroup from '../components/RecipesGroup';
 import { RecipesGroupType } from './api/data';
+import styles from '../components/RecipesGroup/styles.module.css';
 
 export default function Home() {
   const [recipes, setRecipes] = useState<RecipesGroupType[]>([]);
@@ -15,10 +16,10 @@ export default function Home() {
 
   return (
     <>
-      {recipes ? recipes.map((el, id) => (
-        <RecipesGroup key={id} data={el} />
-      )) : 'Loading...' }
-      <RecipesGroup add />
+      {recipes ? recipes.map((el, id) => <RecipesGroup key={id} data={el} />) : 'Loading...'}
+      <div className={styles['bottom']}>
+        <RecipesGroup add />
+      </div>
     </>
   );
 }
