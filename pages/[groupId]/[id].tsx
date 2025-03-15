@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { RecipeType } from '../api/data';
 import styles from './styles.module.css';
+import ReactMarkdown from 'react-markdown';
 
 const RecipePage = () => {
   const router = useRouter();
@@ -37,7 +37,9 @@ const RecipePage = () => {
               <div key={id}>{el}</div>
             ))}
           </div>
-          <p>{data?.recipe}</p>
+          <div className={styles["recipe"]}>
+            <ReactMarkdown>{data?.recipe}</ReactMarkdown>
+          </div>
         </>
       ) : (
         <h3>{message}</h3>

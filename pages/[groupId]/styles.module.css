@@ -12,6 +12,12 @@
   justify-content: space-between;
 }
 
+.container > .recipe {
+  border: 2px solid var(--main-color)!important;
+  margin: 20px 0;
+  padding: 5px;
+}
+
 .container > div {
   margin-top: 20px;
   display: flex;
@@ -24,12 +30,6 @@
   background-color: var(--main-color);
   color: #fff;
   border-radius: 50px;
-}
-
-.container > p {
-  border: 2px solid var(--main-color);
-  margin-top: 20px;
-  padding: 5px;
 }
 
 @media (max-width: 900px) {
